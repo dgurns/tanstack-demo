@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import {
   Zap,
   Server,
@@ -68,6 +68,9 @@ function App() {
               </span>
             </h1>
           </div>
+
+          <Link to="/demo" className="text-white">DEMO</Link>
+          
           <p className="text-2xl md:text-3xl text-gray-300 mb-4 font-light">
             The framework for next generation AI applications
           </p>

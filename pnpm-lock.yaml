@@ -14,6 +14,15 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.0.6
         version: 4.1.17(vite@7.2.2(@types/node@22.19.1)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6))
+      '@tanstack/query-core':
+        specifier: ^5.90.10
+        version: 5.90.10
+      '@tanstack/query-db-collection':
+        specifier: ^1.0.1
+        version: 1.0.1(@tanstack/db@0.5.1(typescript@5.9.3))(@tanstack/query-core@5.90.10)(typescript@5.9.3)
+      '@tanstack/react-db':
+        specifier: ^0.1.45
+        version: 0.1.45(react@19.2.0)(typescript@5.9.3)
       '@tanstack/react-devtools':
         specifier: ^0.7.0
         version: 0.7.11(@types/react-dom@19.2.3(@types/react@19.2.5))(@types/react@19.2.5)(csstype@3.2.3)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(solid-js@1.9.10)
@@ -47,6 +56,9 @@ importers:
       vite-tsconfig-paths:
         specifier: ^5.1.4
         version: 5.1.4(typescript@5.9.3)(vite@7.2.2(@types/node@22.19.1)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6))
+      zod:
+        specifier: ^4.1.12
+        version: 4.1.12
     devDependencies:
       '@tanstack/devtools-vite':
         specifier: ^0.3.11
@@ -1039,6 +1051,9 @@ packages:
   '@speed-highlight/core@1.2.12':
     resolution: {integrity: sha512-uilwrK0Ygyri5dToHYdZSjcvpS2ZwX0w5aSt3GCEN9hrjxWCoeV4Z2DTXuxjwbntaLQIEEAlCeNQss5SoHvAEA==}
 
+  '@standard-schema/spec@1.0.0':
+    resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
+
   '@stylistic/eslint-plugin@5.5.0':
     resolution: {integrity: sha512-IeZF+8H0ns6prg4VrkhgL+yrvDXWDH2cKchrbh80ejG9dQgZWp10epHMbgRuQvgchLII/lfh6Xn3lu6+6L86Hw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -1135,6 +1150,16 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7
 
+  '@tanstack/db-ivm@0.1.13':
+    resolution: {integrity: sha512-sBOWGY4tqMEym2ewjdWrDb5c5c8akvgnEbGVPAtkfFS3QVV0zfVb5RJAkAc8GSxb3ByVfYjyaShVr0kMJhMuow==}
+    peerDependencies:
+      typescript: '>=4.7'
+
+  '@tanstack/db@0.5.1':
+    resolution: {integrity: sha512-u87JYlnwe2SWE1mKyS302DJ1vUhZ3KbImLjlKZyiEXNrgBl0yESEJSkWPk9N7HDNnjn8XcvS1kxR3fso22oe1Q==}
+    peerDependencies:
+      typescript: '>=4.7'
+
   '@tanstack/devtools-client@0.0.3':
     resolution: {integrity: sha512-kl0r6N5iIL3t9gGDRAv55VRM3UIyMKVH83esRGq7xBjYsRLe/BeCIN2HqrlJkObUXQMKhy7i8ejuGOn+bDqDBw==}
     engines: {node: '>=18'}
@@ -1183,8 +1208,24 @@ packages:
     resolution: {integrity: sha512-B7+x7eP2FFvi3fgd3rNH9o/Eixt+pp0zCIdGhnQbAJjFrlwIKGjGnwyJjhWJ5fMQlGks/E2LdDTqEV4W9Plx7g==}
     engines: {node: '>=12'}
 
+  '@tanstack/pacer@0.16.3':
+    resolution: {integrity: sha512-hJGPODkjuUEncwHsFacLY6W5E7lmEU2FMf4Mh0kuxqUx3UsuneQX6ctRpoHBLlgdb7sqDieIaslQnivG3OAZ+A==}
+    engines: {node: '>=18'}
+
   '@tanstack/query-core@5.90.10':
     resolution: {integrity: sha512-EhZVFu9rl7GfRNuJLJ3Y7wtbTnENsvzp+YpcAV7kCYiXni1v8qZh++lpw4ch4rrwC0u/EZRnBHIehzCGzwXDSQ==}
+
+  '@tanstack/query-db-collection@1.0.1':
+    resolution: {integrity: sha512-DASzZoaO7bG3zK5ydj6zf4xfTOBitau2PfI3JYunLphgFLjtsN/OH+lH2Vt/X9W49Ha0UJM2bUNdIJNlds/f/g==}
+    peerDependencies:
+      '@tanstack/db': '*'
+      '@tanstack/query-core': ^5.0.0
+      typescript: '>=4.7'
+
+  '@tanstack/react-db@0.1.45':
+    resolution: {integrity: sha512-YobIFlAFXLXWW+Y6GytRavkrIO3rVxtMEoLB9mLHpNO6dw+/BvQtX4YtJ+FxSkHi/lXqIhIy9z0ATMFktsS/dQ==}
+    peerDependencies:
+      react: '>=16.8.0'
 
   '@tanstack/react-devtools@0.7.11':
     resolution: {integrity: sha512-a2Lmz8x+JoDrsU6f7uKRcyyY+k8mA/n5mb9h7XJ3Fz/y3+sPV9t7vAW1s5lyNkQyyDt6V1Oim99faLthoJSxMw==}
@@ -2023,6 +2064,10 @@ packages:
   flatted@3.3.3:
     resolution: {integrity: sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==}
 
+  fractional-indexing@3.2.0:
+    resolution: {integrity: sha512-PcOxmqwYCW7O2ovKRU8OoQQj2yqTfEB/yeTYk4gPid6dN5ODRfU1hXd9tTVZzax/0NkO7AxpHykvZnT1aYp/BQ==}
+    engines: {node: ^14.13.1 || >=16.0.0}
+
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -2570,6 +2615,9 @@ packages:
   solid-js@1.9.10:
     resolution: {integrity: sha512-Coz956cos/EPDlhs6+jsdTxKuJDPT7B5SVIWgABwROyxjY7Xbr8wkzD68Et+NxnV7DLJ3nJdAC2r9InuV/4Jew==}
 
+  sorted-btree@1.8.1:
+    resolution: {integrity: sha512-395+XIP+wqNn3USkFSrNz7G3Ss/MXlZEqesxvzCRFwL14h6e8LukDHdLBePn5pwbm5OQ9vGu8mDyz2lLDIqamQ==}
+
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
@@ -2962,6 +3010,9 @@ packages:
 
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
+
+  zod@4.1.12:
+    resolution: {integrity: sha512-JInaHOamG8pt5+Ey8kGmdcAcg3OL9reK8ltczgHTAwNhMys/6ThXHityHxVV2p3fkw/c+MAvBHFVYHFZDmjMCQ==}
 
 snapshots:
 
@@ -3746,6 +3797,8 @@ snapshots:
 
   '@speed-highlight/core@1.2.12': {}
 
+  '@standard-schema/spec@1.0.0': {}
+
   '@stylistic/eslint-plugin@5.5.0(eslint@9.39.1(jiti@2.6.1))':
     dependencies:
       '@eslint-community/eslint-utils': 4.9.0(eslint@9.39.1(jiti@2.6.1))
@@ -3823,6 +3876,19 @@ snapshots:
       '@tailwindcss/oxide': 4.1.17
       tailwindcss: 4.1.17
       vite: 7.2.2(@types/node@22.19.1)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)
+
+  '@tanstack/db-ivm@0.1.13(typescript@5.9.3)':
+    dependencies:
+      fractional-indexing: 3.2.0
+      sorted-btree: 1.8.1
+      typescript: 5.9.3
+
+  '@tanstack/db@0.5.1(typescript@5.9.3)':
+    dependencies:
+      '@standard-schema/spec': 1.0.0
+      '@tanstack/db-ivm': 0.1.13(typescript@5.9.3)
+      '@tanstack/pacer': 0.16.3
+      typescript: 5.9.3
 
   '@tanstack/devtools-client@0.0.3':
     dependencies:
@@ -3915,7 +3981,27 @@ snapshots:
 
   '@tanstack/history@1.133.28': {}
 
+  '@tanstack/pacer@0.16.3':
+    dependencies:
+      '@tanstack/devtools-event-client': 0.3.5
+      '@tanstack/store': 0.8.0
+
   '@tanstack/query-core@5.90.10': {}
+
+  '@tanstack/query-db-collection@1.0.1(@tanstack/db@0.5.1(typescript@5.9.3))(@tanstack/query-core@5.90.10)(typescript@5.9.3)':
+    dependencies:
+      '@standard-schema/spec': 1.0.0
+      '@tanstack/db': 0.5.1(typescript@5.9.3)
+      '@tanstack/query-core': 5.90.10
+      typescript: 5.9.3
+
+  '@tanstack/react-db@0.1.45(react@19.2.0)(typescript@5.9.3)':
+    dependencies:
+      '@tanstack/db': 0.5.1(typescript@5.9.3)
+      react: 19.2.0
+      use-sync-external-store: 1.6.0(react@19.2.0)
+    transitivePeerDependencies:
+      - typescript
 
   '@tanstack/react-devtools@0.7.11(@types/react-dom@19.2.3(@types/react@19.2.5))(@types/react@19.2.5)(csstype@3.2.3)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(solid-js@1.9.10)':
     dependencies:
@@ -4976,6 +5062,8 @@ snapshots:
 
   flatted@3.3.3: {}
 
+  fractional-indexing@3.2.0: {}
+
   fsevents@2.3.3:
     optional: true
 
@@ -5507,6 +5595,8 @@ snapshots:
       seroval: 1.3.2
       seroval-plugins: 1.3.3(seroval@1.3.2)
 
+  sorted-btree@1.8.1: {}
+
   source-map-js@1.2.1: {}
 
   source-map@0.6.1: {}
@@ -5872,3 +5962,5 @@ snapshots:
   zod@3.22.3: {}
 
   zod@3.25.76: {}
+
+  zod@4.1.12: {}
